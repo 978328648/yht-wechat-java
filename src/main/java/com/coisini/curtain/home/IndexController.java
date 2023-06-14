@@ -20,21 +20,15 @@ import java.util.Map;
 public class IndexController {
     @RequestMapping("/getHomeBanner")
     public Map<String,Object> getHomeBanner() throws SQLException {
-        System.out.println("getHomeBanner正在调用...");
         Map<String,Object> map = new HashMap<String, Object>();
         List<String> userList = new ArrayList<>();
-        String sql = "SELECT * FROM wechat_bannerimg WHERE url";
+        String sql = "SELECT url FROM wechat_bannerimg";
         ResultSet rs = DatabaseUtil.executeQuery(sql);
-        System.out.println("111122223333");
-        System.out.println(rs.next());
         while (rs.next()) {
             String url = rs.getString("url");
-//            int userAge = rs.getInt("age");
-//            User user = new User(url);
             userList.add(url);
         }
         map.put("imgList",userList);
-        System.out.println("getHomeBanner调用完成...");
         return map;
     }
     @RequestMapping("/getUser")

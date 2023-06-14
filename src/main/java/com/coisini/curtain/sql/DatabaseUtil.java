@@ -21,7 +21,7 @@ public class DatabaseUtil {
         Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
         PreparedStatement pstmt = conn.prepareStatement(sql);
 
-        int index = 1;
+        int index = 0;
         for (Object param : params) {
             pstmt.setObject(index, param);
             index++;
