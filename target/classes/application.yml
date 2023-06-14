@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: springboot-learn
+  jackson:
+    # 蛇形命名法
+    property-naming-strategy: SNAKE_CASE
+    # 时间戳
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true
+
+server:
+  port: 8091
+  ssl:
+    key-store: classpath:server.keystore
+    key-alias: tomcat
+    enabled: true
+    key-store-password: 1qazxdr5
+    key-store-type: JKS
+
+coisini:
+  api-package: com.coisini.curtain.controller
+  year-codes: A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z
+
+wechat:
+  appid: wx1db34817e81a7dc9
+  appsecret: 663339f504aedaa66fc789e2ed9e47d1
+  code2session: https://api.weixin.qq.com/sns/jscode2session?appid={0}&secret={1}&js_code={2}&grant_type=authorization_code
+
+system:
+  condition: linux

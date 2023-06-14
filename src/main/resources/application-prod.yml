@@ -1,0 +1,11 @@
+spring:
+  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/curtain?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+#    username: root
+#    password: sunday
+    url: jdbc:mysql://www.a57521.com/curtain?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    #    url: jdbc:mysql://127.0.0.1:3306/curtain?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    username: curtain
+    #    username: root
+    password: demaxiya789.
+#    password: sunday
