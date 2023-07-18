@@ -47,38 +47,38 @@ public class WXPayRequest {
      */
     private String requestOnce(final String domain, String urlSuffix, String uuid, String data, int connectTimeoutMs, int readTimeoutMs, boolean useCert) throws Exception {
         BasicHttpClientConnectionManager connManager;
-        if (useCert) {
-            // 证书
-            char[] password = config.getMchID().toCharArray();
-            InputStream certStream = config.getCertStream();
-            KeyStore ks = KeyStore.getInstance("PKCS12");
-            ks.load(certStream, password);
-
-            // 实例化密钥库 & 初始化密钥工厂
-            KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
-            kmf.init(ks, password);
-
-            // 创建 SSLContext
-            SSLContext sslContext = SSLContext.getInstance("TLS");
-            sslContext.init(kmf.getKeyManagers(), null, new SecureRandom());
-
-            SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(
-                    sslContext,
-                    new String[]{"TLSv1"},
-                    null,
-                    new DefaultHostnameVerifier());
-
-            connManager = new BasicHttpClientConnectionManager(
-                    RegistryBuilder.<ConnectionSocketFactory>create()
-                            .register("http", PlainConnectionSocketFactory.getSocketFactory())
-                            .register("https", sslConnectionSocketFactory)
-                            .build(),
-                    null,
-                    null,
-                    null
-            );
-        }
-        else {
+//        if (useCert) {
+//            // 证书
+//            char[] password = config.getMchID().toCharArray();
+//            InputStream certStream = config.getCertStream();
+//            KeyStore ks = KeyStore.getInstance("PKCS12");
+//            ks.load(certStream, password);
+//
+//            // 实例化密钥库 & 初始化密钥工厂
+//            KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
+//            kmf.init(ks, password);
+//
+//            // 创建 SSLContext
+//            SSLContext sslContext = SSLContext.getInstance("TLS");
+//            sslContext.init(kmf.getKeyManagers(), null, new SecureRandom());
+//
+//            SSLConnectionSocketFactory sslConnectionSocketFactory = new SSLConnectionSocketFactory(
+//                    sslContext,
+//                    new String[]{"TLSv1"},
+//                    null,
+//                    new DefaultHostnameVerifier());
+//
+//            connManager = new BasicHttpClientConnectionManager(
+//                    RegistryBuilder.<ConnectionSocketFactory>create()
+//                            .register("http", PlainConnectionSocketFactory.getSocketFactory())
+//                            .register("https", sslConnectionSocketFactory)
+//                            .build(),
+//                    null,
+//                    null,
+//                    null
+//            );
+//        }
+//        else {
             connManager = new BasicHttpClientConnectionManager(
                     RegistryBuilder.<ConnectionSocketFactory>create()
                             .register("http", PlainConnectionSocketFactory.getSocketFactory())
@@ -88,7 +88,7 @@ public class WXPayRequest {
                     null,
                     null
             );
-        }
+//        }
 
         HttpClient httpClient = HttpClientBuilder.create()
                 .setConnectionManager(connManager)

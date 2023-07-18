@@ -13,10 +13,8 @@ spring:
 server:
   port: 8091
   ssl:
-    key-store: classpath:server.keystore
-    key-alias: tomcat
-    enabled: true
-    key-store-password: 1qazxdr5
+    key-store: classpath:server.jks
+    key-store-password: 2636o88048ull
     key-store-type: JKS
 
 coisini:

@@ -13,7 +13,7 @@ import java.sql.*;
  * 该方法可以在其他Java类中调用，以实现数据库查询的代码复用。
  */
 public class DatabaseUtil {
-    private static final String URL = "jdbc:mysql://www.a57521.com/curtain?characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true";
+    private static final String URL = "jdbc:mysql://www.a57521.com/curtain?characterEncoding=utf8";
     private static final String USER = "curtain";
     private static final String PASSWORD = "demaxiya789.";
 

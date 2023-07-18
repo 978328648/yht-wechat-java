@@ -20,6 +20,11 @@ public class WeChatSort {
         this.sortFatherId = sortFatherId;
     }
 
+    public WeChatSort(int sortId) {
+
+        this.sortId = sortId;
+    }
+
     public int getSortId() {
         return sortId;
     }
